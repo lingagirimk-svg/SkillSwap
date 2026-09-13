@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SkillSwap | Learn. Teach. Grow.</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="logo">
+        <span class="logo-icon">✦</span>
+        Skill<span>Swap</span>
+    </div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#discover">Discover</a>
+        <a href="#how">How It Works</a>
+        <a href="#about">About</a>
+    </nav>
+
+    <div class="nav-buttons">
+        <button class="login-btn" onclick="openLogin()">Login</button>
+        <button class="signup-btn" onclick="openSignup()">Join SkillSwap</button>
+    </div>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="badge">
+            ✨ Student-powered learning community
+        </div>
+
+        <h1>
+            Don't just learn.
+            <span>Swap skills.</span>
+        </h1>
+
+        <p>
+            Connect with students who know what you want to learn
+            and share the skills you already have.
+        </p>
+
+        <div class="hero-buttons">
+
+            <button class="primary-btn" onclick="openSignup()">
+                Find My Skill Match
+                <span>→</span>
+            </button>
+
+            <button class="secondary-btn" onclick="scrollToSection('how')">
+                See how it works
+            </button>
+
+        </div>
+
+        <div class="hero-stats">
+
+            <div>
+                <strong>2.5K+</strong>
+                <small>Students</small>
+            </div>
+
+            <div>
+                <strong>850+</strong>
+                <small>Skills</small>
+            </div>
+
+            <div>
+                <strong>92%</strong>
+                <small>Successful Matches</small>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Floating skill cards -->
+
+    <div class="skill-orbit">
+
+        <div class="floating-card card-one">
+            <span>💻</span>
+            Java
+        </div>
+
+        <div class="floating-card card-two">
+            <span>🎨</span>
+            UI Design
+        </div>
+
+        <div class="floating-card card-three">
+            <span>🐍</span>
+            Python
+        </div>
+
+        <div class="floating-card card-four">
+            <span>📊</span>
+            Data Science
+        </div>
+
+        <div class="match-circle">
+
+            <div class="match-icon">✦</div>
+
+            <strong>92%</strong>
+
+            <small>Skill Match</small>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= DISCOVER ================= -->
+
+<section class="discover" id="discover">
+
+    <div class="section-heading">
+
+        <span>DISCOVER</span>
+
+        <h2>
+            Find people who can
+            <span>help you grow.</span>
+        </h2>
+
+        <p>
+            Explore skills, discover talented students and find
+            your perfect learning partner.
+        </p>
+
+    </div>
+
+
+    <!-- Search -->
+
+    <div class="search-box">
+
+        <span>⌕</span>
+
+        <input
+            type="text"
+            id="skillSearch"
+            placeholder="What do you want to learn?"
+            onkeyup="searchSkills()"
+        >
+
+        <button onclick="searchSkills()">
+            Search
+        </button>
+
+    </div>
+
+
+    <!-- Skill Categories -->
+
+    <div class="categories">
+
+        <button class="category active" onclick="filterSkill('all')">
+            ✦ All Skills
+        </button>
+
+        <button class="category" onclick="filterSkill('coding')">
+            💻 Coding
+        </button>
+
+        <button class="category" onclick="filterSkill('design')">
+            🎨 Design
+        </button>
+
+        <button class="category" onclick="filterSkill('business')">
+            📈 Business
+        </button>
+
+        <button class="category" onclick="filterSkill('communication')">
+            🗣️ Communication
+        </button>
+
+    </div>
+
+
+    <!-- Student Cards -->
+
+    <div class="student-grid" id="studentGrid">
+
+
+        <div class="student-card" data-category="coding" data-name="arjun">
+
+            <div class="student-top">
+
+                <div class="avatar purple">A</div>
+
+                <div class="online"></div>
+
+                <span class="match">96% Match</span>
+
+            </div>
+
+            <h3>Arjun Kumar</h3>
+
+            <p class="role">Computer Science • 2nd Year</p>
+
+            <div class="skills">
+
+                <span>Java</span>
+                <span>Python</span>
+                <span>SQL</span>
+
+            </div>
+
+            <div class="card-bottom">
+
+                <span>🎯 Wants: UI Design</span>
+
+                <button onclick="sendRequest('Arjun Kumar')">
+                    Connect →
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="student-card" data-category="design" data-name="priya">
+
+            <div class="student-top">
+
+                <div class="avatar pink">P</div>
+
+                <div class="online"></div>
+
+                <span class="match">91% Match</span>
+
+            </div>
+
+            <h3>Priya Sharma</h3>
+
+            <p class="role">AI & DS • 2nd Year</p>
+
+            <div class="skills">
+
+                <span>UI Design</span>
+                <span>Figma</span>
+                <span>Canva</span>
+
+            </div>
+
+            <div class="card-bottom">
+
+                <span>🎯 Wants: Python</span>
+
+                <button onclick="sendRequest('Priya Sharma')">
+                    Connect →
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="student-card" data-category="business" data-name="rohan">
+
+            <div class="student-top">
+
+                <div class="avatar orange">R</div>
+
+                <div class="online"></div>
+
+                <span class="match">88% Match</span>
+
+            </div>
+
+            <h3>Rohan Reddy</h3>
+
+            <p class="role">MBA • 1st Year</p>
+
+            <div class="skills">
+
+                <span>Marketing</span>
+                <span>Business</span>
+                <span>Excel</span>
+
+            </div>
+
+            <div class="card-bottom">
+
+                <span>🎯 Wants: Java</span>
+
+                <button onclick="sendRequest('Rohan Reddy')">
+                    Connect →
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="student-card" data-category="communication" data-name="neha">
+
+            <div class="student-top">
+
+                <div class="avatar blue">N</div>
+
+                <div class="online"></div>
+
+                <span class="match">85% Match</span>
+
+            </div>
+
+            <h3>Neha Patel</h3>
+
+            <p class="role">IT • 3rd Year</p>
+
+            <div class="skills">
+
+                <span>English</span>
+                <span>Public Speaking</span>
+                <span>Leadership</span>
+
+            </div>
+
+            <div class="card-bottom">
+
+                <span>🎯 Wants: Data Science</span>
+
+                <button onclick="sendRequest('Neha Patel')">
+                    Connect →
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= HOW IT WORKS ================= -->
+
+<section class="how" id="how">
+
+    <div class="section-heading">
+
+        <span>HOW IT WORKS</span>
+
+        <h2>
+            Learning becomes
+            <span>better together.</span>
+        </h2>
+
+    </div>
+
+
+    <div class="steps">
+
+        <div class="step">
+
+            <div class="step-number">01</div>
+
+            <div class="step-icon">👤</div>
+
+            <h3>Create your profile</h3>
+
+            <p>
+                Tell us what you know and what
+                you want to learn.
+            </p>
+
+        </div>
+
+
+        <div class="step-line"></div>
+
+
+        <div class="step">
+
+            <div class="step-number">02</div>
+
+            <div class="step-icon">🎯</div>
+
+            <h3>Find your match</h3>
+
+            <p>
+                SkillSwap finds students whose
+                skills match your learning goals.
+            </p>
+
+        </div>
+
+
+        <div class="step-line"></div>
+
+
+        <div class="step">
+
+            <div class="step-number">03</div>
+            <div class="step-icon">🤝</div>
+
+            <h3>Connect & learn</h3>
+
+            <p>
+                Connect with your match and
+                start learning together.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section class="about" id="about">
+
+    <div class="about-card">
+
+        <div class="about-content">
+
+            <span>WHY SKILLSWAP?</span>
+
+            <h2>
+                Your next teacher
+                could be sitting
+                <span>next to you.</span>
+            </h2>
+
+            <p>
+                Every student knows something valuable.
+                SkillSwap turns that knowledge into a
+                community where students teach, learn
+                and grow together.
+            </p>
+
+            <div class="about-points">
+
+                <div>✓ Learn without expensive courses</div>
+                <div>✓ Build real student connections</div>
+                <div>✓ Improve practical skills</div>
+                <div>✓ Share what you already know</div>
+
+            </div>
+
+        </div>
+
+
+        <div class="about-visual">
+
+            <div class="mini-profile profile-one">
+                <b>👨‍💻</b>
+                <span>Java</span>
+            </div>
+
+            <div class="swap-symbol">⇄</div>
+
+            <div class="mini-profile profile-two">
+                <b>🎨</b>
+                <span>Design</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-logo">
+        ✦ Skill<span>Swap</span>
+    </div>
+
+    <p>
+        Learn. Teach. Grow together.
+    </p>
+
+    <small>
+        © 2026 SkillSwap. Student-powered learning.
+    </small>
+
+</footer>
+
+
+<!-- ================= LOGIN MODAL ================= -->
+
+<div class="modal-overlay" id="loginModal">
+
+    <div class="modal">
+
+        <button class="close" onclick="closeModal('loginModal')">×</button>
+
+        <div class="modal-icon">✦</div>
+
+        <h2>Welcome back</h2>
+
+        <p>Continue your SkillSwap journey.</p>
+
+        <input type="email" placeholder="Email address">
+
+        <input type="password" placeholder="Password">
+
+        <button class="modal-btn" onclick="login()">
+            Login
+        </button>
+
+        <div class="modal-switch">
+            Don't have an account?
+            <span onclick="switchModal()">Create one</span>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= SIGNUP MODAL ================= -->
+
+<div class="modal-overlay" id="signupModal">
+
+    <div class="modal">
+
+        <button class="close" onclick="closeModal('signupModal')">×</button>
+
+        <div class="modal-icon">✦</div>
+
+        <h2>Join SkillSwap</h2>
+
+        <p>Start sharing your skills today.</p>
+
+        <input type="text" placeholder="Your name">
+
+        <input type="email" placeholder="Email address">
+
+        <input type="password" placeholder="Create password">
+
+        <button class="modal-btn" onclick="signup()">
+            Create Acc ount
+        </button>
+
+        <div class="modal-switch">
+            Already have an account?
+            <span onclick="switchToLogin()">Login</span>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= TOAST ================= -->
+
+<div class="toast" id="toast">
+    <span>✓</span>
+    <p id="toastMessage">Success!</p>
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
