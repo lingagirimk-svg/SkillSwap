@@ -1,0 +1,17 @@
+com\skillswap\skillswap_backend\MatchController.class
+com\skillswap\skillswap_backend\ConnectionRequestController.class
+com\skillswap\skillswap_backend\ConnectionController.class
+com\skillswap\skillswap_backend\SkillRepository.class
+com\skillswap\skillswap_backend\ConnectionController$ConnectionResponse.class
+com\skillswap\skillswap_backend\ConnectionRepository.class
+com\skillswap\skillswap_backend\SkillswapBackendApplication.class
+com\skillswap\skillswap_backend\Connection.class
+com\skillswap\skillswap_backend\Student.class
+com\skillswap\skillswap_backend\StudentRepository.class
+com\skillswap\skillswap_backend\HelloController.class
+com\skillswap\skillswap_backend\SkillController.class
+com\skillswap\skillswap_backend\StudentController.class
+com\skillswap\skillswap_backend\ConnectionRequest.class
+com\skillswap\skillswap_backend\ConnectionRequestRepository.class
+com\skillswap\skillswap_backend\DashboardController.class
+com\skillswap\skillswap_backend\Skill.class
